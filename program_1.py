@@ -7,27 +7,21 @@
 # The program should calculate and display the total rainfall for the year,
 # the average monthly rainfall, # and the months with the highest and lowest amounts.
 
-def program_3():
+rainfall = []
 
-    rainfall = []
+for month in range(1, 13):
+    amount = float(input(f"Enter rainfall for month {month}: "))
+    rainfall.append(amount)
 
-    for month in range(1, 13):
-        amount = float(input(f"Enter rainfall for month {month}: "))
-        rainfall.append(amount)
+total_rainfall = sum(rainfall)
+average_rainfall = total_rainfall / 12
+highest_rainfall = max(rainfall)
+lowest_rainfall = min(rainfall)
 
-    total_rainfall = sum(rainfall)
-    average_rainfall = total_rainfall / 12
-    highest_rainfall = max(rainfall)
-    lowest_rainfall = min(rainfall)
+highest_month = rainfall.index(highest_rainfall) + 1
+lowest_month = rainfall.index(lowest_rainfall) + 1
 
-    highest_month = rainfall.index(highest_rainfall) + 1
-    lowest_month = rainfall.index(lowest_rainfall) + 1
-
-    print("Total rainfall for the year:", total_rainfall)
-    print("Average monthly rainfall:", average_rainfall)
-    print("Month with highest rainfall:", highest_month, "Amount of rainfall:", highest_rainfall)
-    print("Month with lowest rainfall:", lowest_month, "Amount of rainfall:", lowest_rainfall)
-
-
-if __name__ == '__main__':
-    program_3()
+print("Total rainfall for the year:", total_rainfall)
+print("Average monthly rainfall:", average_rainfall)
+print("Month with highest rainfall:", highest_month, "Amount of rainfall:", highest_rainfall)
+print("Month with lowest rainfall:", lowest_month, "Amount of rainfall:", lowest_rainfall)
